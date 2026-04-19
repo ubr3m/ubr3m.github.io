@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Žemėlapis</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b1020;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">Kraunamas žemėlapis...</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+  <script>
+    fetch('Pastatu_aplinkos_tinkamumas_verslui.html.gz')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Nepavyko rasti Pastatu_aplinkos_tinkamumas_verslui.html.gz');
+        }
+        return response.arrayBuffer();
+      })
+      .then(buffer => {
+        const decompressed = pako.ungzip(new Uint8Array(buffer), { to: 'string' });
+        document.open();
+        document.write(decompressed);
+        document.close();
+      })
+      .catch(error => {
+        document.body.innerHTML = '<div class="loading">Klaida: ' + error.message + '</div>';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
