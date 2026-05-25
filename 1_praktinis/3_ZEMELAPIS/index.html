@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="lt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Žemėlapis</title>
+
+  <title>Pastatų aplinkos tinkamumas verslui</title>
+
   <style>
     html, body {
       margin: 0;
@@ -13,6 +15,7 @@
       color: white;
       font-family: Arial, sans-serif;
     }
+
     .loading {
       display: flex;
       align-items: center;
@@ -22,10 +25,12 @@
     }
   </style>
 </head>
+
 <body>
   <div class="loading">Kraunamas žemėlapis...</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+
   <script>
     fetch('Pastatu_aplinkos_tinkamumas_verslui.html.gz')
       .then(response => {
@@ -35,10 +40,23 @@
         return response.arrayBuffer();
       })
       .then(buffer => {
-        const decompressed = pako.ungzip(new Uint8Array(buffer), { to: 'string' });
+        let decompressed = pako.ungzip(new Uint8Array(buffer), { to: 'string' });
+
+        decompressed = decompressed.replace(
+          /<title>.*?<\/title>/i,
+          '<title>Pastatų aplinkos tinkamumas verslui</title>'
+        );
+
+        decompressed = decompressed.replaceAll(
+          'Kepler.gl embedded map',
+          'Pastatų aplinkos tinkamumas verslui'
+        );
+
         document.open();
         document.write(decompressed);
         document.close();
+
+        document.title = 'Pastatų aplinkos tinkamumas verslui';
       })
       .catch(error => {
         document.body.innerHTML = '<div class="loading">Klaida: ' + error.message + '</div>';
