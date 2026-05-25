@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Vilniaus miesto pastatų analizė</title>
 
   <script type="module" src="https://js.arcgis.com/5.0/embeddable-components/"></script>
@@ -10,32 +11,41 @@
   <style>
     html,
     body {
-      height: 100%;
       width: 100%;
-      padding: 0;
+      height: 100%;
       margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .map-container {
+      width: 100%;
+      height: 100vh;
     }
 
     arcgis-embedded-map {
       display: block;
       width: 100%;
-      height: 100vh;
+      height: 100%;
+      border: 0;
     }
   </style>
 </head>
 
 <body>
-  <arcgis-embedded-map
-    item-id="9c3646f65ed4441b9541f374865702e8"
-    theme="light"
-    heading-enabled
-    legend-enabled
-    information-enabled
-    scroll-enabled
-    time-zone-label-enabled
-    center="25.29152177015206,54.68723601005954"
-    scale="288895.2771445"
-    portal-url="https://www.arcgis.com">
-  </arcgis-embedded-map>
+  <div class="map-container">
+    <arcgis-embedded-map
+      item-id="9c3646f65ed4441b9541f374865702e8"
+      theme="light"
+      heading-enabled
+      legend-enabled
+      information-enabled
+      scroll-enabled
+      time-zone-label-enabled
+      center="25.29152177015206,54.68723601005954"
+      scale="288895.2771445"
+      portal-url="https://www.arcgis.com">
+    </arcgis-embedded-map>
+  </div>
 </body>
 </html>
