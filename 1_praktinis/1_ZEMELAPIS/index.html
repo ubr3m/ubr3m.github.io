@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="lt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Žemėlapis</title>
+
+  <title>Vilniaus pastatų statybos laikotarpio kaita</title>
+
   <style>
     html, body {
       margin: 0;
@@ -13,6 +15,7 @@
       color: white;
       font-family: Arial, sans-serif;
     }
+
     .loading {
       display: flex;
       align-items: center;
@@ -22,23 +25,38 @@
     }
   </style>
 </head>
+
 <body>
   <div class="loading">Kraunamas žemėlapis...</div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+
   <script>
-    fetch('PASTATAI.html.gz')
+    fetch('vilniaus_pastatu_statybos_laikotarpio_kaita.html.gz')
       .then(response => {
         if (!response.ok) {
-          throw new Error('Nepavyko rasti PASTATAI.html.gz');
+          throw new Error('Nepavyko rasti vilniaus_pastatu_statybos_laikotarpio_kaita.html.gz');
         }
         return response.arrayBuffer();
       })
       .then(buffer => {
-        const decompressed = pako.ungzip(new Uint8Array(buffer), { to: 'string' });
+        let decompressed = pako.ungzip(new Uint8Array(buffer), { to: 'string' });
+
+        decompressed = decompressed.replace(
+          /<title>.*?<\/title>/i,
+          '<title>Vilniaus pastatų statybos laikotarpio kaita</title>'
+        );
+
+        decompressed = decompressed.replaceAll(
+          'Kepler.gl embedded map',
+          'Vilniaus pastatų statybos laikotarpio kaita'
+        );
+
         document.open();
         document.write(decompressed);
         document.close();
+
+        document.title = 'Vilniaus pastatų statybos laikotarpio kaita';
       })
       .catch(error => {
         document.body.innerHTML = '<div class="loading">Klaida: ' + error.message + '</div>';
