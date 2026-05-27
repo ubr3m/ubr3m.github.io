@@ -1,32 +1,31 @@
 ﻿<!DOCTYPE html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vilniaus pastatų statybos laikotarpio kaita</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilniaus pastatų statybos laikotarpio kaita</title>
 
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: 0;
-    }
-  </style>
+    <link rel="stylesheet" href="../css/map-only.css">
+    <script src="../js/map-only-loader.js" defer></script>
 </head>
 
-<body>
-  <iframe
-    src="1_ZEMELAPIS/index.html"
-    title="Vilniaus pastatų statybos laikotarpio kaita"
-    allow="geolocation">
-  </iframe>
+<body class="map-only-page">
+    <div class="map-only-wrapper">
+        <div class="map-only-loader" id="mapLoader">
+            <div class="map-only-loader-card">
+                <div class="map-only-spinner"></div>
+                <p class="map-only-loader-text">Žemėlapis kraunasi...</p>
+            </div>
+        </div>
+
+        <iframe
+            class="map-only-frame"
+            id="mapFrame"
+            data-loader-duration="10000"
+            src="1_ZEMELAPIS/index.html"
+            title="Vilniaus pastatų statybos laikotarpio kaita"
+            allow="geolocation">
+        </iframe>
+    </div>
 </body>
 </html>

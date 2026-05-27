@@ -1,34 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="lt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vilniaus verslo pasiūlymų registracija ir peržiūra</title>
-    <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
 
-      iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <iframe
-      src="https://vu-lt.maps.arcgis.com/apps/instant/sidebar/index.html?appid=b4bdd5d117cf446b86a5f0458f59c074"
-      title="Vilniaus verslo pasiūlymų registracija ir peržiūra"
-      allowfullscreen
-    >
-      iFrames are not supported on this page.
-    </iframe>
-  </body>
+    <link rel="stylesheet" href="../css/map-only.css">
+    <script src="../js/map-only-loader.js" defer></script>
+</head>
+
+<body class="map-only-page">
+    <div class="map-only-wrapper">
+        <div class="map-only-loader" id="mapLoader">
+            <div class="map-only-loader-card">
+                <div class="map-only-spinner"></div>
+                <p class="map-only-loader-text">Žemėlapis kraunasi...</p>
+            </div>
+        </div>
+
+        <iframe
+            class="map-only-frame"
+            id="mapFrame"
+            data-loader-duration="6000"
+            src="https://vu-lt.maps.arcgis.com/apps/instant/sidebar/index.html?appid=b4bdd5d117cf446b86a5f0458f59c074"
+            title="Vilniaus verslo pasiūlymų registracija ir peržiūra"
+            allowfullscreen>
+            iFrames are not supported on this page.
+        </iframe>
+    </div>
+</body>
 </html>

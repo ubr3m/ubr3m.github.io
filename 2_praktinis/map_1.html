@@ -1,41 +1,32 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilniaus verslo plėtros potencialas ir viešojo transporto prieinamumas</title>
 
-  <title>Vilniaus verslo plėtros potencialas ir viešojo transporto prieinamumas</title>
-
-  <style>
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .map-container {
-      width: 100%;
-      height: 100vh;
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-  </style>
+    <link rel="stylesheet" href="../css/map-only.css">
+    <script src="../js/map-only-loader.js" defer></script>
 </head>
 
-<body>
-  <div class="map-container">
-    <iframe
-      src="https://www.geoportal.lt/map/?mode=embed#s=3346&amp;x=584145.7058946476&amp;y=6063183.200449074&amp;l=7&amp;b=grey&amp;layers=https://qgiscloud.com/AnaMilanoviciute/verslo_potencialas_qgiscloud/wms?SERVICE=WMS[AMP]REQUEST=GetCapabilities|1.00"
-      title="Vilniaus verslo plėtros potencialas ir viešojo transporto prieinamumas">
-    </iframe>
-  </div>
+<body class="map-only-page">
+    <div class="map-only-wrapper">
+        <div class="map-only-loader" id="mapLoader">
+            <div class="map-only-loader-card">
+                <div class="map-only-spinner"></div>
+                <p class="map-only-loader-text">Žemėlapis kraunasi...</p>
+            </div>
+        </div>
+
+        <iframe
+            class="map-only-frame"
+            id="mapFrame"
+            data-loader-delay="1000"
+            data-loader-timeout="8000"
+            src="https://www.geoportal.lt/map/?mode=embed#s=3346&amp;x=581297.019910868&amp;y=6063324.311707832&amp;l=7&amp;b=grey&amp;layers=https://www.geoportal.lt/mapproxy/lakd_vintra_stotys_stoteles/MapServer|1.00;https://www.geoportal.lt/mapproxy/gisc_inspire_geoserver/tn/wms?service=WMS[AMP]version=1.3.0[AMP]request=GetCapabilities|1.00;https://qgiscloud.com/AnaMilanoviciute/verslo_potencialas_qgiscloud/wms?SERVICE=WMS[AMP]REQUEST=GetCapabilities|1.00"
+            title="Vilniaus verslo plėtros potencialas ir viešojo transporto prieinamumas"
+            allowfullscreen>
+        </iframe>
+    </div>
 </body>
 </html>

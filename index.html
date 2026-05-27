@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vilniaus miesto GIS atlasas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#pradzia" class="site-logo" aria-label="Vilniaus miesto GIS atlasas">
+                <span class="logo-mark">GIS</span>
+                <span class="logo-text">Vilniaus miesto GIS atlasas</span>
+            </a>
+
+            <nav class="main-navigation" aria-label="Pagrindinė navigacija">
+                <a href="#pradzia">Pradžia</a>
+                <a href="#apie">Apie atlasą</a>
+                <a href="#zemelapiai">Žemėlapiai</a>
+                <a href="#dalyvavimas">Pasiūlymai</a>
+                <a href="kontaktai.html">Kontaktai</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="pradzia" class="hero-section">
+            <div class="hero-background">
+                <img src="images/vilnius-panorama.jpg" alt="Vilniaus miesto panorama prie Neries">
+            </div>
+
+            <div class="hero-overlay"></div>
+
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <p class="section-label light-label">Interaktyvūs miesto duomenys</p>
+                    <h1>Vilniaus miesto GIS atlasas</h1>
+                </div>
+
+                <aside class="atlas-card-hero" aria-label="Atlaso galimybės">
+                    <div class="atlas-card-top">
+                        <p class="atlas-small-title">Atlaso galimybės</p>
+                        <span class="status-pill">6 žemėlapiai · 2 formos</span>
+                    </div>
+
+                    <h2>Ką čia galima rasti?</h2>
+
+                    <p class="atlas-card-description">
+                        Galite atsidaryti žemėlapius, palyginti skirtingus miesto duomenis
+                        ir pateikti savo pasiūlymą.
+                    </p>
+
+                    <div class="atlas-mode-list">
+                        <div class="atlas-mode mode-one">
+                            <span class="mode-number">01</span>
+                            <div>
+                                <strong>Žemėlapių peržiūra</strong>
+                                <p>Atverkite norimą žemėlapį ir peržiūrėkite sluoksnius.</p>
+                            </div>
+                        </div>
+
+                        <div class="atlas-mode mode-two">
+                            <span class="mode-number">02</span>
+                            <div>
+                                <strong>Miesto duomenų palyginimas</strong>
+                                <p>Palyginkite pastatų, gyventojų, verslo ir susisiekimo informaciją.</p>
+                            </div>
+                        </div>
+
+                        <div class="atlas-mode mode-three">
+                            <span class="mode-number">03</span>
+                            <div>
+                                <strong>Pasiūlymų pateikimas</strong>
+                                <p>Galite pasiūlyti naują verslo objektą arba verslo teritoriją.</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="apie" class="content-section about-section">
+            <div class="section-heading">
+                <p class="section-label">Apie atlasą</p>
+                <h2>Vilniaus miesto duomenys vienoje vietoje</h2>
+                <p>
+                    Ši svetainė veikia kaip interaktyvus atlasas. Čia surinkti keli skirtingi
+                    žemėlapiai, kurie padeda paprasčiau peržiūrėti Vilniaus miesto duomenis pagal
+                    skirtingas temas.
+                </p>
+            </div>
+
+            <div class="story-grid">
+                <article class="story-card">
+                    <img
+                        src="images/vilnius-architektura.jpg"
+                        alt="Vilniaus modernios architektūros fragmentas"
+                        loading="lazy"
+                        decoding="async">
+                    <div class="story-content">
+                        <h3>Užstatymo raida</h3>
+                        <p>
+                            Pastatų žemėlapiai leidžia matyti, kaip skirtingose miesto dalyse
+                            pasiskirstę senesni ir naujesni pastatai.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <img
+                        src="images/vilnius-ruduo.jpg"
+                        alt="Vilniaus miesto vaizdas iš aukščiau"
+                        loading="lazy"
+                        decoding="async">
+                    <div class="story-content">
+                        <h3>Gyventojai ir verslas</h3>
+                        <p>
+                            Gyventojų ir verslo sluoksniai padeda palyginti teritorijas ir geriau
+                            suprasti miesto aktyvumą.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="story-card">
+                    <img
+                        src="images/vilnius-siluetas.jpg"
+                        alt="Vilniaus miesto siluetas su televizijos bokštu"
+                        loading="lazy"
+                        decoding="async">
+                    <div class="story-content">
+                        <h3>Susisiekimas ir pasiūlymai</h3>
+                        <p>
+                            Galima peržiūrėti susisiekimo informaciją ir pateikti naują verslo objekto
+                            ar teritorijos pasiūlymą.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="zemelapiai" class="content-section map-section">
+            <div class="section-heading">
+                <p class="section-label">Žemėlapiai</p>
+                <h2>Interaktyvus atlaso katalogas</h2>
+                <p>
+                    Pasirinkite žemėlapį iš katalogo. Žemėlapis bus atidarytas tame pačiame peržiūros lange.
+                </p>
+            </div>
+
+            <div class="atlas-viewer">
+                <div class="map-catalog" aria-label="Žemėlapių katalogas">
+                    <button
+                        class="atlas-map-item"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="Vilniaus pastatų statybos laikotarpio kaita"
+                        data-tag="Kepler.gl"
+                        data-src="1_praktinis/map_1.html"
+                        data-link="1_praktinis/map_1.html"
+                        data-loader-duration="10000"
+                        data-desc="Žemėlapyje pastatai vaizduojami 3D aplinkoje. Laiko filtras leidžia stebėti, kaip skirtingais laikotarpiais keitėsi Vilniaus miesto užstatymas.">
+                        <span class="catalog-number">01</span>
+                        <span class="catalog-text">
+                            <strong>Užstatymo raida 3D</strong>
+                            <small>Pastatai ir statybos laikotarpiai</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="atlas-map-item"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="Gyventojų ir verslo objektų pasiskirstymo palyginimas"
+                        data-tag="Kepler.gl"
+                        data-src="1_praktinis/map_2.html"
+                        data-link="1_praktinis/map_2.html"
+                        data-loader-duration="4500"
+                        data-desc="Žemėlapyje palyginami gyventojų tankio ir verslo objektų pasiskirstymo sluoksniai skirtingose Vilniaus miesto teritorijose.">
+                        <span class="catalog-number">02</span>
+                        <span class="catalog-text">
+                            <strong>Gyventojai ir verslas</strong>
+                            <small>Grid sluoksnių palyginimas</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="atlas-map-item"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="Pastatų aplinkos tinkamumas verslui"
+                        data-tag="Kepler.gl"
+                        data-src="1_praktinis/map_3.html"
+                        data-link="1_praktinis/map_3.html"
+                        data-loader-duration="11000"
+                        data-desc="Žemėlapyje vertinama pastatų aplinka pagal artumą iki viešojo transporto stotelių ir netoliese esančių verslo objektų.">
+                        <span class="catalog-number">03</span>
+                        <span class="catalog-text">
+                            <strong>Pastatų aplinka</strong>
+                            <small>Verslas ir stotelės aplink pastatus</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="atlas-map-item"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="Verslo plėtros potencialo 3D modelis"
+                        data-tag="Kepler.gl"
+                        data-src="1_praktinis/map_4.html"
+                        data-link="1_praktinis/map_4.html"
+                        data-loader-duration="6500"
+                        data-desc="Šiame žemėlapyje verslo plėtros potencialas vertinamas pagal gyventojų tankį ir jau veikiančių verslo objektų pasiskirstymą.">
+                        <span class="catalog-number">04</span>
+                        <span class="catalog-text">
+                            <strong>Verslo potencialas</strong>
+                            <small>Gyventojų tankis ir esamas verslas</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="atlas-map-item"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="Vilniaus verslo plėtros potencialas ir viešojo transporto prieinamumas"
+                        data-tag="QGIS Cloud / geoportal.lt"
+                        data-src="2_praktinis/map_1.html"
+                        data-link="2_praktinis/map_1.html"
+                        data-loader-duration="5000"
+                        data-desc="Žemėlapyje pateikiami gyventojų grid duomenys kartu su kelių tinklu, viešojo transporto stotelėmis ir kitais infrastruktūros sluoksniais.">
+                        <span class="catalog-number">05</span>
+                        <span class="catalog-text">
+                            <strong>Grid ir infrastruktūra</strong>
+                            <small>Gyventojai, keliai ir stotelės</small>
+                        </span>
+                    </button>
+
+                    <button
+                        class="atlas-map-item"
+                        type="button"
+                        aria-pressed="false"
+                        data-title="Pastatai pagal statybos laikotarpius"
+                        data-tag="QGIS Cloud / ArcGIS Online"
+                        data-src="2_praktinis/map_2.html"
+                        data-link="2_praktinis/map_2.html"
+                        data-loader-duration="5000"
+                        data-desc="Žemėlapyje pastatai suskirstyti pagal statybos laikotarpius. Tai leidžia palyginti senesnių ir naujesnių pastatų pasiskirstymą mieste.">
+                        <span class="catalog-number">06</span>
+                        <span class="catalog-text">
+                            <strong>Pastatų laikotarpiai</strong>
+                            <small>Seni ir naujesni pastatai</small>
+                        </span>
+                    </button>
+                </div>
+
+                <article class="atlas-display">
+                    <div class="atlas-display-header">
+                        <div>
+                            <span id="activeMapTag" class="map-tag">Atlasas</span>
+                            <h3 id="activeMapTitle">Pasirinkite žemėlapį</h3>
+                            <p id="activeMapDescription">
+                                Paspauskite vieną iš žemėlapių kataloge. Žemėlapis bus įkeltas šiame lange.
+                            </p>
+                        </div>
+
+                        <a
+                            id="activeMapLink"
+                            class="open-map-link is-disabled"
+                            href="#zemelapiai"
+                            aria-disabled="true">
+                            Atidaryti atskirai
+                        </a>
+                    </div>
+
+                    <div class="atlas-frame-wrapper">
+                        <div id="mapStartMessage" class="map-start-message">
+                            <div>
+                                <strong>Žemėlapis dar nepasirinktas</strong>
+                                <p>Pasirinkite žemėlapį kairėje pusėje.</p>
+                            </div>
+                        </div>
+
+                        <div id="mapLoader" class="map-loader is-hidden">
+                            <div class="loader-spinner"></div>
+                            <p>Žemėlapis kraunasi...</p>
+                        </div>
+
+                        <iframe
+                            id="activeMapFrame"
+                            src="about:blank"
+                            title="Interaktyvus žemėlapis"
+                            class="map-frame"
+                            loading="lazy"
+                            scrolling="no"
+                            allow="geolocation; fullscreen; clipboard-read; clipboard-write">
+                        </iframe>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="dalyvavimas" class="participation-section">
+    <div class="participation-card">
+        <div class="participation-copy">
+            <p class="section-label">Pasiūlymai</p>
+            <h2>Pasiūlymų pateikimas</h2>
+            <p>
+                Jei norite, galite pateikti naujo verslo objekto arba galimos verslo teritorijos pasiūlymą.
+                Taip pat galite atidaryti interaktyvų pasiūlymų žemėlapį ir peržiūrėti jau pateiktus pasiūlymus.
+            </p>
+        </div>
+
+        <div class="participation-buttons">
+            <a
+                href="https://survey123.arcgis.com/share/4879a34c8bb04ef89b51e9cbceb20f43"
+                class="button button-primary"
+                target="_blank"
+                rel="noopener noreferrer">
+                Pasiūlyti verslo objektą
+            </a>
+
+            <a
+                href="https://survey123.arcgis.com/share/36e661c34dad457ba9182fbb3f721546"
+                class="button button-primary"
+                target="_blank"
+                rel="noopener noreferrer">
+                Pasiūlyti verslo teritoriją
+            </a>
+
+            <a
+                href="3_praktinis/index.html"
+                class="button button-secondary"
+                target="_blank"
+                rel="noopener noreferrer">
+                Peržiūrėti pasiūlymų žemėlapį
+            </a>
+        </div>
+    </div>
+</section>
+
+        <section class="attribution-section">
+            <div class="attribution-box">
+                <h2>Šaltiniai ir naudojamos priemonės</h2>
+                <p>
+                    Atlase naudojami Vilniaus miesto erdviniai duomenys, viešai prieinamos žemėlapių
+                    paslaugos ir praktinių darbų metu parengti teminiai sluoksniai.
+                    Žemėlapių peržiūrai naudoti Kepler.gl, QGIS Cloud, geoportal.lt ir ArcGIS Online sprendimai.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-column">
+                <h3>Vilniaus miesto GIS atlasas</h3>
+                <p>
+                    Interaktyvi svetainė, skirta Vilniaus miesto erdvinių duomenų peržiūrai ir analizei.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Nuorodos</h3>
+                <a href="#pradzia">Pradžia</a>
+                <a href="#apie">Apie atlasą</a>
+                <a href="#zemelapiai">Žemėlapiai</a>
+                <a href="#dalyvavimas">Pasiūlymai</a>
+                <a href="kontaktai.html">Kontaktai</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Informacija</h3>
+                <p>Sukūrimo data: 2026 m.</p>
+                <p>Autorė: Ana Milanovičiūtė</p>
+                <p>Vilniaus universitetas, Kartografija ir GIS.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/atlas.js"></script>
+</body>
+</html>
